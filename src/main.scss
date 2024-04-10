@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  transition: all 1s ease-out;
 }
 
 p {
@@ -11,4 +12,93 @@ main {
   margin: auto;
   padding: 6rem 1rem;
   width: min(100%, 700px);
+  position: relative;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  background-color: #e60f16;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 12px 40px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.modal-click {
+  position: relative;
+}
+
+.arrow {
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+
+.modal-click:hover .arrow {
+  left: 10px;
+}
+
+#modal {
+  position:fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-out;
+}
+
+#modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#modal-close {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #e60f16;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+}
+
+#modal-close:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
+#modal-container {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+video, img {
+  width: 100%;
 }
